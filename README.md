@@ -4,196 +4,34 @@
   <title>Pay & Park - Kolhapur</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
       background-color: #f0f8ff;
-    }
-
-    h2, h3 { color: #333; }
-
-    /* ✨ LOGIN PAGE with background slideshow */
-    .login-container {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* Background Slideshow */
-    .bg-slideshow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      animation: slideShow 25s infinite;
-      z-index: -2;
-    }
-
-    @keyframes slideShow {
-      0% {
-        background-image: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1600&q=80');
-      }
-      25% {
-        background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
-      }
-      50% {
-        background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80');
-      }
-      75% {
-        background-image: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1600&q=80');
-      }
-      100% {
-        background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
-      }
-    }
-
-    /* Dark overlay */
-    .login-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
-      backdrop-filter: blur(4px);
-      z-index: -1;
-    }
-
-    /* Login card - glass effect */
-    .login-card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(14px);
-      padding: 35px 25px;
-      border-radius: 20px;
-      width: 330px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      color: white;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      animation: fadeIn 1.2s ease-in-out;
     }
-    .login-card h2 {
-      margin-bottom: 10px;
-      font-size: 24px;
-    }
-    .login-card .subtitle {
-      font-size: 14px;
-      margin-bottom: 20px;
-      color: #ddd;
-    }
+    h2 { color: #333; }
 
-    .input-group {
-      display: flex;
-      align-items: center;
-      background: rgba(255,255,255,0.2);
-      border-radius: 8px;
-      padding: 10px;
-      margin-bottom: 15px;
-    }
-    .input-group span {
-      font-size: 18px;
-      margin-right: 8px;
-    }
-    .input-group input {
-      border: none;
-      outline: none;
-      background: transparent;
-      flex: 1;
-      font-size: 14px;
-      color: white;
-    }
-    .input-group input::placeholder {
-      color: #eee;
-    }
-
-    input[type="submit"], input[type="reset"] {
-      padding: 12px;
-      width: 48%;
-      margin: 5px 1%;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 15px;
-      transition: 0.3s;
-      color: white;
-    }
-    input[type="submit"] {
-      background: linear-gradient(135deg, #4CAF50, #2196F3);
-    }
-    input[type="submit"]:hover {
-      transform: scale(1.05);
-    }
-    input[type="reset"] {
-      background: rgba(255,255,255,0.3);
-    }
-    input[type="reset"]:hover {
-      background: rgba(255,255,255,0.5);
-      transform: scale(1.05);
-    }
-
-    /* Parking Header */
-    .parking-header {
-      background: linear-gradient(135deg, #2196F3, #4CAF50);
-      color: white;
-      text-align: center;
-      padding: 30px 10px;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Parking Cards Grid */
-    .parking-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .parking-card {
+    /* Cards */
+    .card, .parking-card {
       background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      cursor: pointer;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .parking-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-    }
-    .parking-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .parking-card .info {
-      padding: 15px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      margin: 15px auto;
+      width: 320px;
       text-align: left;
     }
-    .parking-card .info h3 {
-      margin: 0 0 8px;
-      color: #4CAF50;
-    }
-    .parking-card .info p {
-      margin: 4px 0;
-      color: #555;
-      font-size: 14px;
-    }
+    .parking-card h3 { margin: 0 0 10px; color: #4CAF50; }
+    .parking-card p { margin: 5px 0; color: #555; }
 
-    /* Slot Page */
+    /* Parking slots */
     .slot-container {
       display: grid;
       grid-template-columns: repeat(10, 1fr);
       gap: 10px;
       justify-content: center;
       margin-top: 20px;
-      padding: 0 20px;
     }
     .slot {
       width: 50px;
@@ -211,6 +49,7 @@
     .slot.booked { background-color: #f44336; }
     .slot.selected { background-color: #2196F3; }
 
+    /* Legend */
     .legend {
       margin-top: 15px;
       font-size: 15px;
@@ -234,6 +73,57 @@
     .red { background-color: #f44336; }
     .blue { background-color: #2196F3; }
 
+    /* Login Page */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #4CAF50, #2196F3);
+    }
+    .login-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .login-card h2 { margin-bottom: 10px; color: #333; }
+    .login-card .subtitle { margin-bottom: 20px; font-size: 14px; color: #666; }
+    .input-group {
+      display: flex;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .input-group span { font-size: 18px; margin-right: 8px; }
+    .input-group input {
+      border: none;
+      outline: none;
+      background: transparent;
+      flex: 1;
+      font-size: 14px;
+    }
+    input[type="submit"], input[type="reset"], button {
+      padding: 12px;
+      width: 48%;
+      margin: 5px 1%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+      color: white;
+    }
+    input[type="submit"] { background-color: #4CAF50; }
+    input[type="submit"]:hover { background-color: #45a049; transform: scale(1.05); }
+    input[type="reset"] { background-color: #f44336; }
+    input[type="reset"]:hover { background-color: #d32f2f; transform: scale(1.05); }
+
     /* Dashboard */
     .dashboard {
       margin: 30px auto;
@@ -243,7 +133,11 @@
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
+    .dashboard h2 { margin-bottom: 20px; }
+    .detail { text-align: left; margin: 10px 0; font-size: 16px; }
+    .detail span { font-weight: bold; color: #0077b6; }
 
+    /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -252,14 +146,11 @@
 </head>
 <body>
 
-<!-- LOGIN PAGE -->
+<!-- Login -->
 <div id="loginPage" class="login-container">
-  <div class="bg-slideshow"></div>
-  <div class="login-overlay"></div>
-
   <div class="login-card">
     <h2>🚗 Pay & Park - Kolhapur</h2>
-    <p class="subtitle">Login to manage your parking easily</p>
+    <p class="subtitle">Login to manage your parking</p>
     <form onsubmit="return loginUser()">
       <div class="input-group">
         <span>👤</span>
@@ -275,50 +166,36 @@
   </div>
 </div>
 
-<!-- PARKING PAGE -->
+<!-- Parking Page -->
 <div id="parkingPage" style="display: none;">
-  <div class="parking-header">
-    <h2>Welcome, <span id="currentUser"></span> 👋</h2>
-    <p>Select a Pay & Park location below to book your slot.</p>
+  <h2>Welcome, <span id="currentUser"></span></h2>
+  <h3>Pay & Park Locations in Kolhapur</h3>
+  <div class="parking-card" onclick="openSlots('Shahu Market Pay & Park')">
+    <h3>Shahu Market Pay & Park</h3>
+    <p>📍 Near Central Bus Stand</p>
+    <p>💰 ₹20 per hour</p>
   </div>
-
-  <div class="parking-grid">
-    <div class="parking-card" onclick="openSlots('Shahu Market Pay & Park')">
-      <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?auto=format&fit=crop&w=800&q=60" alt="Shahu Market Parking">
-      <div class="info">
-        <h3>Shahu Market Pay & Park</h3>
-        <p>📍 Near Central Bus Stand</p>
-        <p>💰 ₹20 per hour</p>
-      </div>
-    </div>
-
-    <div class="parking-card" onclick="openSlots('Rankala Lake Parking')">
-      <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=60" alt="Rankala Lake Parking">
-      <div class="info">
-        <h3>Rankala Lake Parking</h3>
-        <p>📍 Rankala Lake Main Gate</p>
-        <p>💰 ₹30 for 2 hours</p>
-      </div>
-    </div>
-
-    <div class="parking-card" onclick="openSlots('DYP Mall Parking')">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="DYP Mall Parking">
-      <div class="info">
-        <h3>DYP Mall Parking</h3>
-        <p>📍 Shahupuri</p>
-        <p>💰 ₹40 for 3 hours</p>
-      </div>
-    </div>
+  <div class="parking-card" onclick="openSlots('Rankala Lake Parking')">
+    <h3>Rankala Lake Parking</h3>
+    <p>📍 Rankala Lake Main Gate</p>
+    <p>💰 ₹30 for 2 hours</p>
   </div>
-
-  <div style="text-align:center; margin-bottom:30px;">
-    <button onclick="logoutUser()">Logout</button>
+  <div class="parking-card" onclick="openSlots('DYP Mall Parking')">
+    <h3>DYP Mall Parking</h3>
+    <p>📍 Shahupuri</p>
+    <p>💰 ₹40 for 3 hours</p>
   </div>
+  <div class="parking-card" onclick="openSlots('Kolhapur Railway Station Parking')">
+    <h3>Kolhapur Railway Station Parking</h3>
+    <p>📍 Near Railway Station</p>
+    <p>💰 ₹25 per hour</p>
+  </div>
+  <button onclick="logoutUser()">Logout</button>
 </div>
 
-<!-- SLOT PAGE -->
+<!-- Slot Page -->
 <div id="slotPage" style="display: none;">
-  <h2 id="parkingTitle" style="text-align:center; margin-top:20px;"></h2>
+  <h2 id="parkingTitle"></h2>
   <div class="slot-container" id="slots"></div>
   <div class="legend">
     <div><span class="green"></span> 🟢 Available</div>
@@ -326,13 +203,11 @@
     <div><span class="blue"></span> 🔵 Selected</div>
   </div>
   <br>
-  <div style="text-align:center;">
-    <button onclick="backToParking()">⬅ Back</button>
-    <button onclick="logoutUser()">Logout</button>
-  </div>
+  <button onclick="backToParking()">⬅ Back</button>
+  <button onclick="logoutUser()">Logout</button>
 </div>
 
-<!-- DASHBOARD -->
+<!-- Dashboard -->
 <div id="dashboardPage" style="display: none;">
   <div class="dashboard">
     <h2>User Booking Details</h2>
@@ -358,7 +233,8 @@
   let bookedSlots = JSON.parse(localStorage.getItem("bookedSlots")) || {
     "Shahu Market Pay & Park": [],
     "Rankala Lake Parking": [],
-    "DYP Mall Parking": []
+    "DYP Mall Parking": [],
+    "Kolhapur Railway Station Parking": []
   };
 
   function saveBookings() {
@@ -442,6 +318,5 @@
     document.getElementById("parkingPage").style.display = "block";
   }
 </script>
-
 </body>
 </html>
